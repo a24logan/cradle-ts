@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Modal from "./Modal";
 import "./css/Popup.css";
 import {
@@ -8,14 +7,14 @@ import {
   PopupHeader,
   PopupText,
 } from "./ModalPopup.styles";
-import CradleButton from "../Components/cradleButton";
+import CradleButton from "../cradleButton";
 
-interface ConfirmSignatureModalProps {
+interface ErrorModalProps {
   isModalVisible: boolean;
   onBackdropClick: () => void;
 }
 
-const ConfirmSignatureModal: React.FC<ConfirmSignatureModalProps> = ({
+const ErrorModal: React.FC<ErrorModalProps> = ({
   onBackdropClick,
   isModalVisible,
 }) => {
@@ -28,30 +27,31 @@ const ConfirmSignatureModal: React.FC<ConfirmSignatureModalProps> = ({
         <PopupContent>
           <div
             className="imgContainer"
-            style={{ background: "rgba(0, 204, 153, 0.1)" }}
+            style={{ background: "rgba(255, 201, 38, 0.1)" }}
           >
             <img
-              src={require("../assets/images/lock.png")}
+              src={require("../../assets/images/warning.png")}
               alt=""
-              className="popupImage"
+              className="warningImage"
             ></img>
           </div>
-          <PopupHeader>Confirm Signature</PopupHeader>
+          <PopupHeader>Something Went Wrong</PopupHeader>
           <PopupText>
-            Confirm your signature to proceed with the transaction
+            It looks like you’re having issues checking out. Need help with
+            that?
           </PopupText>
           <div className="buttonContainer">
             <CradleButton
-              src="closeIcon.png"
+              src="email.png"
               onButtonClick={onBackdropClick}
-              style={{ background: "#F13E43" }}
-              buttonTxt="Decline"
+              style={{ background: "#119DA4" }}
+              buttonTxt="Email Us"
             ></CradleButton>
             <CradleButton
-              src="checkIcon.png"
+              src="phone.png"
               onButtonClick={onBackdropClick}
               style={{ background: "#00CC99" }}
-              buttonTxt="Confirm"
+              buttonTxt="Call Us"
             ></CradleButton>
           </div>
         </PopupContent>
@@ -59,4 +59,4 @@ const ConfirmSignatureModal: React.FC<ConfirmSignatureModalProps> = ({
     </Modal>
   );
 };
-export default ConfirmSignatureModal;
+export default ErrorModal;

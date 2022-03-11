@@ -1,0 +1,93 @@
+.bannerOutline {
+  position: absolute;
+  right: -348px;
+  height: 370px;
+  -webkit-animation: slide 6s forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 6s forwards;
+  animation-delay: 1s;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    right: -348px;
+  }
+  60% {
+    right: 0;
+  }
+  100% {
+    right: -348px;
+  }
+}
+
+@keyframes slide {
+  0% {
+    right: -348px;
+  }
+  60% {
+    right: 0;
+  }
+  100% {
+    right: -348px;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  width: 54px;
+  height: 54px;
+  top: 15px;
+  left: 14px;
+  border-radius: 50%;
+  background: rgba(0, 204, 153, 0.1);
+  justify-content: center;
+}
+
+.connectedWallet {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.bannerHeader {
+  position: relative;
+  font-family: TT Norms Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #2d4654;
+  margin-bottom: 5px;
+}
+
+.bannerText {
+  position: relative;
+  font-family: TT Norms Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #4e4d5c;
+}
+
+.bannerImg {
+  position: relative;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  top: 21px;
+  left: 14px;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+}

@@ -8,7 +8,7 @@ import {
   PopupHeader,
   PopupText,
 } from "./ModalPopup.styles";
-import CradleButton from "../Components/cradleButton";
+import CradleButton from "../cradleButton";
 
 interface ScamModalProps {
   isModalVisible: boolean;
@@ -30,7 +30,7 @@ const ScamModal: React.FC<ScamModalProps> = ({
             className="imgContainer"
             style={{ background: "rgba(241, 62, 67, 0.1)" }}
           >
-            <img src={require("../assets/images/redX.png")} alt=""></img>
+            <img src={require("../../assets/images/redX.png")} alt=""></img>
           </div>
           <PopupHeader>Scam Reported</PopupHeader>
           <PopupText>
