@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "./Modal";
-import "./css/Popup.css";
+import "../css/Popup.css";
 import {
   PopupContainer,
   PopupContent,
@@ -27,7 +27,7 @@ const ConfirmSignatureModal: React.FC<ConfirmSignatureModalProps> = ({
       <PopupContainer>
         <PopupContent>
           <div
-            className="imgContainer"
+            className="popupImgContainer"
             style={{ background: "rgba(0, 204, 153, 0.1)" }}
           >
             <img

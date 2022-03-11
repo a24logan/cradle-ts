@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "./Modal";
-import "./css/Popup.css";
+import "../css/Popup.css";
 import {
   PopupContainer,
   PopupContent,
@@ -26,7 +26,7 @@ const ErrorModal: React.FC<ErrorModalProps> = ({
       <PopupContainer>
         <PopupContent>
           <div
-            className="imgContainer"
+            className="popupImgContainer"
             style={{ background: "rgba(255, 201, 38, 0.1)" }}
           >
             <img

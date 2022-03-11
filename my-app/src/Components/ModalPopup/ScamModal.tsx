@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "./Modal";
-import "./css/Popup.css";
+import "../css/Popup.css";
 import {
   PopupContainer,
   PopupContent,
@@ -27,7 +27,7 @@ const ScamModal: React.FC<ScamModalProps> = ({
       <PopupContainer>
         <PopupContent>
           <div
-            className="imgContainer"
+            className="popupImgContainer"
             style={{ background: "rgba(241, 62, 67, 0.1)" }}
           >
             <img src={require("../../assets/images/redX.png")} alt=""></img>
