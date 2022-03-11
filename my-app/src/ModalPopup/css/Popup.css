@@ -1,0 +1,25 @@
+.imgContainer {
+  position: relative;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  justify-content: center;
+  border-radius: 50%;
+}
+.popupImage {
+  height: 20px;
+  width: 20px;
+  visibility: visible;
+}
+.warningImage {
+  height: 45px;
+  width: 45px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
