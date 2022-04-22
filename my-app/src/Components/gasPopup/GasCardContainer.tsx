@@ -17,9 +17,14 @@ const GasCardContainer: React.FC = () => {
       }}
     >
       {types.map((type) => (
-        <GasCard active={active === type} onClick={() => setActive(type)}>
-          {type}
-        </GasCard>
+        <GasCard
+          active={active === type}
+          src="person.png"
+          headerTxt="Take your time"
+          color="#011936"
+          contentTxt="0.0005 eth"
+          onClick={() => setActive(type)}
+        ></GasCard>
       ))}
     </div>
   );
