@@ -1,8 +1,37 @@
 import { useState } from "react";
 import styled from "styled-components";
-import GasCard from "./GasCard";
+import GasCard, { GasCardProps } from "./GasCard";
 const types = ["Slow", "Quick", "Fast", "Custom"];
-
+const gasCardProps: GasCardProps[] = [
+  {
+    src: "person.png",
+    headerTxt: "Take your Time",
+    contentTxt: "0.0005 eth",
+    color: "#011936",
+    active: false,
+  },
+  {
+    src: "car.png",
+    headerTxt: "Ideally Quick",
+    contentTxt: "0.0005 eth",
+    color: "#119DA4",
+    active: false,
+  },
+  {
+    src: "rocket.png",
+    headerTxt: "Need Asap",
+    contentTxt: "0.0005 eth",
+    color: "#F13E43",
+    active: false,
+  },
+  {
+    src: "pencil.png",
+    headerTxt: "Custom",
+    contentTxt: "Enter Amount",
+    color: "#4E4D5C",
+    active: false,
+  },
+];
 const GasCardContainer: React.FC = () => {
   const [active, setActive] = useState(types[0]);
 
@@ -16,13 +45,10 @@ const GasCardContainer: React.FC = () => {
         alignItems: "left",
       }}
     >
-      {types.map((type) => (
+      {types.map((type, index) => (
         <GasCard
+          {...gasCardProps[index]}
           active={active === type}
-          src="person.png"
-          headerTxt="Take your time"
-          color="#011936"
-          contentTxt="0.0005 eth"
           onClick={() => setActive(type)}
         ></GasCard>
       ))}

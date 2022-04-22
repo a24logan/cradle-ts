@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-interface GasCardProps {
+export interface GasCardProps {
   src: string;
   headerTxt: string;
   contentTxt: string;
   color: string;
   active: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const GasCard: React.FC<GasCardProps> = ({
@@ -67,11 +67,11 @@ const GasCardOutline = styled.div<Props>`
   width: 130px;
   height: 76px;
   color: ${(props) => props.color};
-  background: rgba(1, 25, 54, 0.1);
+  background: ${(props) => hexToRgbA(props.color)};
   border-radius: 5.36914px;
   margin-right: 15px;
   margin-top: 20px;
-  opacity: 0.7;
+  opacity: 1;
   ${({ active, background }) =>
     active &&
     `
@@ -112,3 +112,23 @@ const SubTitle = styled.div`
   line-height: 12px;
   display: flex;
 `;
+
+function hexToRgbA(hex: string) {
+  if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+    let c = hex.substring(1).split("");
+    if (c.length == 3) {
+      c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+    }
+    let curr = "0x" + c.join("");
+    return (
+      "rgba(" +
+      [
+        (parseInt(curr) >> 16) & 255,
+        (parseInt(curr) >> 8) & 255,
+        parseInt(curr) & 255,
+      ].join(",") +
+      ",0.1)"
+    );
+  }
+  throw new Error("Bad Hex");
+}
