@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import GasPopup from "./Components/gasPopup/gasPopup";
 import BannerTemplate from "./Components/ModalPopup/BannerModals/BannerTemplate";
 import ConnectedBanner from "./Components/ModalPopup/BannerModals/ConnectedBanner";
 import ConfirmSignatureModal from "./Components/ModalPopup/ConfirmSignatureModal";
@@ -10,6 +11,7 @@ function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isErrorVisible, setIsErrorVisible] = useState(false);
   const [isScamVisible, setIsScamVisible] = useState(false);
+  const [isGasPopupVisible, setIsGasPopupVisible] = useState(false);
 
   const toggleModal = () => {
     setIsModalVisible((isModalVisible) => !isModalVisible);
@@ -20,6 +22,10 @@ function App() {
 
   const toggleScamModal = () => {
     setIsScamVisible((isScamVisible) => !isScamVisible);
+  };
+
+  const toggleGasPopup = () => {
+    setIsGasPopupVisible((isGasPopupVisible) => !isGasPopupVisible);
   };
 
   return (
@@ -35,12 +41,18 @@ function App() {
         isModalVisible={isErrorVisible}
         onBackdropClick={toggleErrorModal}
       ></ErrorModal>
-      <button onClick={toggleScamModal}>Show Scam Modal</button>
 
       <ScamModal
         isModalVisible={isScamVisible}
         onBackdropClick={toggleScamModal}
       ></ScamModal>
+      <button onClick={toggleGasPopup}>Show Gas Modal</button>
+
+      <GasPopup
+        isModalVisible={isGasPopupVisible}
+        onBackdropClick={toggleGasPopup}
+      ></GasPopup>
+
       <ConnectedBanner></ConnectedBanner>
 
       <BannerTemplate
